@@ -11,7 +11,16 @@
   </url>
   
   <url>
-    <loc>http://example.com/2025/12/11/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA%E4%B8%80/</loc>
+    <loc>http://example.com/2025/12/11/CISCN2019%20%E6%80%BB%E5%86%B3%E8%B5%9B%20Day1%20Web1--%E6%BB%91%E7%A8%BD%E4%BA%91%E9%9F%B3%E4%B9%90%20(2)/</loc>
+    
+    <lastmod>2025-12-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2025/12/11/hexstrlike-ai/</loc>
     
     <lastmod>2025-12-11</lastmod>
     
@@ -21,6 +30,42 @@
   
   <url>
     <loc>http://example.com/2025/12/11/js%E5%86%85%E5%AD%98%E9%A9%AC-CVE-2025-55182/</loc>
+    
+    <lastmod>2025-12-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2025/12/11/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA%E4%B8%80/</loc>
+    
+    <lastmod>2025-12-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2025/12/11/%E7%88%B6%E5%AD%90%E5%9F%9F%E6%90%AD%E5%BB%BA/</loc>
+    
+    <lastmod>2025-12-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2025/12/11/%E4%BF%A1%E5%91%BCOA%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</loc>
+    
+    <lastmod>2025-12-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2025/12/11/sql%E6%B3%A8%E5%85%A5/</loc>
     
     <lastmod>2025-12-11</lastmod>
     
