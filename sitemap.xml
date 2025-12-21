@@ -261,14 +261,14 @@
   </url>
   
   <url>
-    <loc>https://flypigc.github.io/tags/web%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://flypigc.github.io/tags/webpwn/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://flypigc.github.io/tags/webpwn/</loc>
+    <loc>https://flypigc.github.io/tags/web%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -312,13 +312,6 @@
   </url>
   
   <url>
-    <loc>https://flypigc.github.io/categories/AI/</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://flypigc.github.io/categories/CVE/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -333,6 +326,13 @@
   </url>
   
   <url>
+    <loc>https://flypigc.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://flypigc.github.io/categories/web%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -340,7 +340,7 @@
   </url>
   
   <url>
-    <loc>https://flypigc.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://flypigc.github.io/categories/AI/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -368,14 +368,14 @@
   </url>
   
   <url>
-    <loc>https://flypigc.github.io/categories/waf%E7%BB%95%E8%BF%87/</loc>
+    <loc>https://flypigc.github.io/categories/web%E9%9D%B6%E5%9C%BA/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://flypigc.github.io/categories/web%E9%9D%B6%E5%9C%BA/</loc>
+    <loc>https://flypigc.github.io/categories/waf%E7%BB%95%E8%BF%87/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
