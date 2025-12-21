@@ -254,20 +254,6 @@
 
   
   <url>
-    <loc>https://flypigc.github.io/tags/web%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://flypigc.github.io/tags/java%EF%BC%8C%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://flypigc.github.io/tags/webpwn/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -275,7 +261,21 @@
   </url>
   
   <url>
+    <loc>https://flypigc.github.io/tags/web%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://flypigc.github.io/tags/AI/</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://flypigc.github.io/tags/java%EF%BC%8C%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -305,7 +305,7 @@
   </url>
   
   <url>
-    <loc>https://flypigc.github.io/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</loc>
+    <loc>https://flypigc.github.io/categories/CVE/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -333,14 +333,7 @@
   </url>
   
   <url>
-    <loc>https://flypigc.github.io/categories/CVE/</loc>
-    <lastmod>2025-12-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://flypigc.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://flypigc.github.io/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -354,7 +347,7 @@
   </url>
   
   <url>
-    <loc>https://flypigc.github.io/categories/%E6%9C%8D%E5%8A%A1/</loc>
+    <loc>https://flypigc.github.io/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -362,6 +355,13 @@
   
   <url>
     <loc>https://flypigc.github.io/categories/%E5%86%85%E7%BD%91%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://flypigc.github.io/categories/%E6%9C%8D%E5%8A%A1/</loc>
     <lastmod>2025-12-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
