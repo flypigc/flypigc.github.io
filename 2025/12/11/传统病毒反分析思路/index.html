@@ -29,7 +29,48 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><body class="is-2-column"> <nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/flypigc/"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-12-11T07:47:30.162Z" title="2025/12/11 15:47:30">2025-12-11</time>发表</span><span class="level-item"><time dateTime="2025-12-20T01:55:33.337Z" title="2025/12/20 09:55:33">2025-12-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%97%85%E6%AF%92%E5%88%86%E6%9E%90/">病毒分析</a></span><span class="level-item">23 分钟读完 (大约3499个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">传统病毒分析</h1><div class="content"><p>传统病毒分析-熊猫烧香2.0</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.17.0/dist/av-min.js"></script><script>
+                    // 初始化LeanCloud
+                    AV.init({
+                        appId: 'DXfCFZTgWFPKbz1O0ECKx6c4-gzGzoHsz',
+                        appKey: 'SKZJcJzaj0pbYin0kSfQI4my',
+                        serverURL: 'https://dxfcfztg.lc-cn-n1-shared.com'
+                    });
+
+                    // 统计文章浏览量（自动去重+计数）
+                    (function() {
+                        // 获取当前文章路径作为唯一标识
+                        const path = window.location.pathname;
+                        const query = new AV.Query('Counter');
+                        query.equalTo('url', path);
+                        
+                        query.find().then(function(results) {
+                            if (results.length > 0) {
+                                // 已有记录：浏览量+1并更新
+                                const counter = results[0];
+                                counter.increment('time');
+                                counter.save().then(function() {
+                                    const el = document.getElementById('leancloud_visitors');
+                                    if (el) el.innerText = counter.get('time');
+                                });
+                            } else {
+                                // 首次访问：创建新记录，初始值1
+                                const newCounter = new AV.Object('Counter');
+                                newCounter.set('url', path);
+                                newCounter.set('time', 1);
+                                newCounter.save().then(function() {
+                                    const el = document.getElementById('leancloud_visitors');
+                                    if (el) el.innerText = 1;
+                                });
+                            }
+                        }).catch(function(error) {
+                            // 出错时友好提示
+                            console.log('LeanCloud统计出错：', error);
+                            const el = document.getElementById('leancloud_visitors');
+                            if (el) el.innerText = '未知';
+                        });
+                    })();
+                </script><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/flypigc/"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-12-11T07:47:30.162Z" title="2025/12/11 15:47:30">2025-12-11</time>发表</span><span class="level-item"><time dateTime="2025-12-20T01:55:33.337Z" title="2025/12/20 09:55:33">2025-12-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E7%97%85%E6%AF%92%E5%88%86%E6%9E%90/">病毒分析</a></span><span class="level-item">23 分钟读完 (大约3499个字)</span><span class="level-item" id="leancloud_visitors_container"><span>浏览量：<span id="leancloud_visitors">0</span>次</span></span></div></div><h1 class="title is-3 is-size-4-mobile">传统病毒分析</h1><div class="content"><p>传统病毒分析-熊猫烧香2.0</p>
 <span id="more"></span>
 
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本文对传统病毒（熊猫烧香2.0）进行了系统性逆向分析。该病毒活跃于2006–2007年，曾在中国造成大规模感染，其核心特征包括：通过U盘和局域网自动传播、感染可执行文件并替换桌面图标为“熊猫烧香”、强力对抗杀毒软件、以及多重持久化机制。本报告详细剖析了其注册表自启动、窗口检测关闭安全工具、网络共享枚举、移动存储自动运行等关键技术模块，并结合现代安全视角评估其当前威胁等级，同时提供完整的应急处置与清除方案，为理解传统蠕虫病毒的攻击范式及防御演进提供重要参考。</p>

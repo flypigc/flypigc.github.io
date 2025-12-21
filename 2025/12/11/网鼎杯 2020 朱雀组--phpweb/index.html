@@ -29,7 +29,48 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><body class="is-2-column"> <nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/flypigc/"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-12-11T06:54:49.706Z" title="2025/12/11 14:54:49">2025-12-11</time>发表</span><span class="level-item"><time dateTime="2025-12-11T06:55:18.265Z" title="2025/12/11 14:55:18">2025-12-11</time>更新</span><span class="level-item">4 分钟读完 (大约572个字)</span></div></div><div class="content"><h1 id="网鼎杯-2020-朱雀组–phpweb"><a href="#网鼎杯-2020-朱雀组–phpweb" class="headerlink" title="网鼎杯 2020 朱雀组–phpweb"></a>网鼎杯 2020 朱雀组–phpweb</h1><span id="more"></span>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.17.0/dist/av-min.js"></script><script>
+                    // 初始化LeanCloud
+                    AV.init({
+                        appId: 'DXfCFZTgWFPKbz1O0ECKx6c4-gzGzoHsz',
+                        appKey: 'SKZJcJzaj0pbYin0kSfQI4my',
+                        serverURL: 'https://dxfcfztg.lc-cn-n1-shared.com'
+                    });
+
+                    // 统计文章浏览量（自动去重+计数）
+                    (function() {
+                        // 获取当前文章路径作为唯一标识
+                        const path = window.location.pathname;
+                        const query = new AV.Query('Counter');
+                        query.equalTo('url', path);
+                        
+                        query.find().then(function(results) {
+                            if (results.length > 0) {
+                                // 已有记录：浏览量+1并更新
+                                const counter = results[0];
+                                counter.increment('time');
+                                counter.save().then(function() {
+                                    const el = document.getElementById('leancloud_visitors');
+                                    if (el) el.innerText = counter.get('time');
+                                });
+                            } else {
+                                // 首次访问：创建新记录，初始值1
+                                const newCounter = new AV.Object('Counter');
+                                newCounter.set('url', path);
+                                newCounter.set('time', 1);
+                                newCounter.save().then(function() {
+                                    const el = document.getElementById('leancloud_visitors');
+                                    if (el) el.innerText = 1;
+                                });
+                            }
+                        }).catch(function(error) {
+                            // 出错时友好提示
+                            console.log('LeanCloud统计出错：', error);
+                            const el = document.getElementById('leancloud_visitors');
+                            if (el) el.innerText = '未知';
+                        });
+                    })();
+                </script><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/flypigc/"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-12-11T06:54:49.706Z" title="2025/12/11 14:54:49">2025-12-11</time>发表</span><span class="level-item"><time dateTime="2025-12-11T06:55:18.265Z" title="2025/12/11 14:55:18">2025-12-11</time>更新</span><span class="level-item">4 分钟读完 (大约572个字)</span><span class="level-item" id="leancloud_visitors_container"><span>浏览量：<span id="leancloud_visitors">0</span>次</span></span></div></div><div class="content"><h1 id="网鼎杯-2020-朱雀组–phpweb"><a href="#网鼎杯-2020-朱雀组–phpweb" class="headerlink" title="网鼎杯 2020 朱雀组–phpweb"></a>网鼎杯 2020 朱雀组–phpweb</h1><span id="more"></span>
 
 <p>这个先放御剑扫一下，没出货<br>然后观察到它是一直刷新的，我们用bp抓一下包<br><img src="https://cdn.nlark.com/yuque/0/2025/png/62156892/1765435761524-6f0ea0b3-e007-4051-bab0-5ca2a2f259bc.png" referrerpolicy="no-referrer" alt="null"></p>
 <p>这里看到请求传了一个func和p<br><code>func</code>猜测是<code>function</code>,<code>p</code>应该是<code>payload</code>（猜的）</p>

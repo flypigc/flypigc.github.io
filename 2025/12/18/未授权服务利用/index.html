@@ -29,7 +29,48 @@
       switchTab();
       window.addEventListener('hashchange', switchTab, false);
   })();
-  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><body class="is-2-column"> <nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/flypigc/"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-12-18T14:15:40.857Z" title="2025/12/18 22:15:40">2025-12-18</time>发表</span><span class="level-item"><time dateTime="2025-12-20T01:58:58.960Z" title="2025/12/20 09:58:58">2025-12-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%8D%E5%8A%A1/">服务</a></span><span class="level-item">25 分钟读完 (大约3712个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">未授权漏洞利用</h1><div class="content"><p>未授权漏洞利用</p>
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.17.0/dist/av-min.js"></script><script>
+                    // 初始化LeanCloud
+                    AV.init({
+                        appId: 'DXfCFZTgWFPKbz1O0ECKx6c4-gzGzoHsz',
+                        appKey: 'SKZJcJzaj0pbYin0kSfQI4my',
+                        serverURL: 'https://dxfcfztg.lc-cn-n1-shared.com'
+                    });
+
+                    // 统计文章浏览量（自动去重+计数）
+                    (function() {
+                        // 获取当前文章路径作为唯一标识
+                        const path = window.location.pathname;
+                        const query = new AV.Query('Counter');
+                        query.equalTo('url', path);
+                        
+                        query.find().then(function(results) {
+                            if (results.length > 0) {
+                                // 已有记录：浏览量+1并更新
+                                const counter = results[0];
+                                counter.increment('time');
+                                counter.save().then(function() {
+                                    const el = document.getElementById('leancloud_visitors');
+                                    if (el) el.innerText = counter.get('time');
+                                });
+                            } else {
+                                // 首次访问：创建新记录，初始值1
+                                const newCounter = new AV.Object('Counter');
+                                newCounter.set('url', path);
+                                newCounter.set('time', 1);
+                                newCounter.save().then(function() {
+                                    const el = document.getElementById('leancloud_visitors');
+                                    if (el) el.innerText = 1;
+                                });
+                            }
+                        }).catch(function(error) {
+                            // 出错时友好提示
+                            console.log('LeanCloud统计出错：', error);
+                            const el = document.getElementById('leancloud_visitors');
+                            if (el) el.innerText = '未知';
+                        });
+                    })();
+                </script><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" referrerpolicy="no-referrer" alt="Sky&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/flypigc/"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2025-12-18T14:15:40.857Z" title="2025/12/18 22:15:40">2025-12-18</time>发表</span><span class="level-item"><time dateTime="2025-12-20T01:58:58.960Z" title="2025/12/20 09:58:58">2025-12-20</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%8D%E5%8A%A1/">服务</a></span><span class="level-item">25 分钟读完 (大约3712个字)</span><span class="level-item" id="leancloud_visitors_container"><span>浏览量：<span id="leancloud_visitors">0</span>次</span></span></div></div><h1 class="title is-3 is-size-4-mobile">未授权漏洞利用</h1><div class="content"><p>未授权漏洞利用</p>
 <span id="more"></span>
 
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>未作限制，普通用户能垂直越权什么的</p>
