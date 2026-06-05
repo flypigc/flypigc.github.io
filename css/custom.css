@@ -9,3 +9,14 @@
     padding: 0 15px;
   }
 }
+.social-qrcode-content {
+  max-width: 360px;
+}
+.social-qrcode-title {
+  margin-bottom: 1rem;
+}
+.social-qrcode-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

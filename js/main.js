@@ -137,4 +137,40 @@
         $mask.on('click', toggleToc);
         $('.navbar-main .catalogue').on('click', toggleToc);
     }
+
+    const $socialQrcodeModal = $('#social-qrcode-modal');
+    if ($socialQrcodeModal.length > 0) {
+        const $socialQrcodeImage = $('#social-qrcode-image');
+        const $socialQrcodeTitle = $('#social-qrcode-title');
+
+        function closeSocialQrcode() {
+            $socialQrcodeModal.removeClass('is-active');
+            $('html').removeClass('is-clipped');
+            $socialQrcodeImage.removeAttr('src').attr('alt', '');
+            $socialQrcodeTitle.text('');
+        }
+
+        $(document).off('click.socialQrcodeOpen').on('click.socialQrcodeOpen', '[data-social-qrcode="true"]', function(event) {
+            event.preventDefault();
+            const $trigger = $(this);
+            const imageUrl = $trigger.attr('data-social-url');
+            const imageName = $trigger.attr('data-social-name') || '';
+
+            $socialQrcodeImage.attr('src', imageUrl).attr('alt', imageName);
+            $socialQrcodeTitle.text(imageName ? imageName + ' QR code' : 'QR code');
+            $socialQrcodeModal.addClass('is-active');
+            $('html').addClass('is-clipped');
+        });
+
+        $(document).off('click.socialQrcodeClose').on('click.socialQrcodeClose', '[data-social-qrcode-close="true"]', function(event) {
+            event.preventDefault();
+            closeSocialQrcode();
+        });
+
+        $(document).off('keyup.socialQrcode').on('keyup.socialQrcode', function(event) {
+            if (event.key === 'Escape') {
+                closeSocialQrcode();
+            }
+        });
+    }
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
