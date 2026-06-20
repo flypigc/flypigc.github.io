@@ -1,0 +1,24 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    version="1.1"
+    width="949"
+    height="256"
+    viewBox="0 0 949 256">
+    <!-- 保留原有蓝色渐变三角形 -->
+    <path fill="#2366d1" d="M110.851 128L221.703 192L110.851 256L0 192Z"/>
+    <path fill="#609dff" d="M110.851 64L221.703 128L110.851 192L0 128Z"/>
+    <path fill="#a4c7ff" d="M110.851 0L221.703 64L110.851 128L0 64Z"/>
+    
+    <!-- 艺术签名风格的 Sky's Blog 文字（放大+优化位置填充右侧空白） -->
+    <g transform="translate(280, 140)">
+        <!-- 优先使用艺术签名字体，兼容不同系统 -->
+        <text x="0" y="0" 
+              font-family="'Brush Script MT', 'Ma Shan Zheng', 'Microsoft YaHei', cursive" 
+              font-size="72px" 
+              font-weight="500" 
+              letter-spacing="2px"
+              fill="#333">
+            Sky's Blog
+        </text>
+    </g>
+</svg>
